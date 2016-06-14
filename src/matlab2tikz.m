@@ -6057,6 +6057,12 @@ function [env, versionString] = getEnvironment()
         env = cache.env;
         versionString = cache.versionString;
     end
+
+    if (isoctave)
+        env = 'Octave';
+    else
+        env = 'MATLAB';
+    end
 end
 % ==============================================================================
 function bool = isHG2()
